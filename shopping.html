@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>锡货超市</title>
+<link href="css/public.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+        <script type="text/javascript" src="js/jquery_cart.js"></script>  
+        <link rel="stylesheet" type="text/css" href="css/checkOut.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    
+   <div class="banner_red_top"> 
+        
+
+  </div>  
+    
+    
+ <!--收货地址body部分开始-->  
+ <div class="border_top_cart">
+  <script type="text/javascript">
+    var checkoutConfig={
+        addressMatch:'common',
+        addressMatchVarName:'data',
+        hasPresales:false,
+        hasBigTv:false,
+        hasAir:false,
+        hasScales:false,
+        hasGiftcard:false,
+        totalPrice:244.00,
+        postage:10,//运费
+        postFree:true,//活动是否免邮了
+        bcPrice:150,//计算界值
+        activityDiscountMoney:0.00,//活动优惠
+        showCouponBox:0,
+        invoice:{
+            NA:"0",
+            personal:"1",
+            company:"2",
+            electronic:"4"
+        }
+    };
+    var miniCartDisable=true;
+</script>
+<div class="container">
+    <div class="checkout-box">
+        <form  id="checkoutForm" action="#" method="post">
+            <div class="checkout-box-bd">
+
+</div>
+<div class="box-bd">
+                    <!-- 支付方式 -->
+                                <div class="xm-box">
+                <div class="box-hd ">
+                    <h2 class="title">支付方式</h2>
+                </div>
+                <div class="box-bd">
+                    <ul id="checkoutPaymentList" class="checkout-option-list clearfix J_optionList">
+                                                <li class="item selected">
+                            <input type="radio" name="Checkout[pay_id]" checked="checked" value="1">
+                            <p>
+                                在线支付                                <span></span>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+            <!-- 支付方式 END-->
+
+                </div>
+                <div class="xm-box">
+                    <div class="box-hd">
+                        <h2 class="title">上课时间</h2>
+                    </div>
+                    <div class="box-bd">
+                        <ul class="checkout-option-list clearfix J_optionList">
+                                                        <li class="item selected"><input type="radio" checked="checked" name="Checkout[best_time]" value="1"><p>不限上课时间<span>周一至周日</span></p></li><li class="item "><input type="radio"  name="Checkout[best_time]" value="2"><p>工作日上课<span>周一至周五</span></p></li><li class="item "><input type="radio"  name="Checkout[best_time]" value="3"><p>双休日、假日上课<span>周六至周日</span></p></li>                        </ul>
+                    </div>
+                </div>
+                <!-- 送货时间 END-->
+                <!-- 发票信息 -->
+                <div id="checkoutInvoice">
+                    <div class="xm-box">
+    <div class="box-hd">
+        <h2 class="title">发票信息</h2>
+    </div>
+    <div class="box-bd">
+        <ul class="checkout-option-list checkout-option-invoice clearfix J_optionList J_optionInvoice">
+             <li class="hide">
+                                 电子个人发票4  
+             </li>
+                        <li class="item selected">
+                <!--<label><input type="radio"  class="needInvoice" value="0" name="Checkout[invoice]">不开发票</label>-->
+                <input type="radio"    checked="checked"  value="4" name="Checkout[invoice]">
+                <p>电子发票（非纸质）</p>
+            </li>
+                        <li class="item ">
+                <input type="radio"   value="1" name="Checkout[invoice]">
+                <p>普通发票（纸质）</p>
+            </li>
+        </ul>
+                <p id="eInvoiceTip" class="e-invoice-tip ">
+            电子发票是税务局认可的有效凭证，可作为售后维权凭据，不随商品寄送。开票后不可更换纸质发票，如需报销请选择普通发票。<a href="http://bbs.xiaomi.cn/thread-9285999-1-1.html" target="_blank">什么是电子发票？</a>
+        </p>
+        <div class="invoice-info nvoice-info-1" id="checkoutInvoiceElectronic" style="display:none;">
+
+            <p class="tip">电子发票目前仅对个人用户开具，不可用于单位报销 ，不随商品寄送</p>
+            <p>发票内容：购买商品明细</p>
+            <p>发票抬头：个人</p>
+            <p>
+                <span class="hide"><input type="radio" value="4" name="Checkout[invoice_type]"   checked="checked"   id="electronicPersonal" class="invoiceType"></span>
+                <dl>
+                    <dt>什么是电子发票?</dt>
+                    <dd>&#903; 电子发票是纸质发票的映像，是税务局认可的有效凭证，与传统纸质发票具有同等法律效力，可作为售后维权凭据。</dd>
+                    <dd>&#903; 开具电子服务于个人，开票后不可更换纸质发票，不可用于单位报销。</dd>
+                    <dd>&#903; 您在订单详情的"发票信息"栏可查看、下载您的电子发票。<a href="http://bbs.xiaomi.cn/thread-9285999-1-1.html" target="_blank">什么是电子发票？</a></dd>
+                </dl>
+            </p>
+        </div>
+                <div class="invoice-info invoice-info-2" id="checkoutInvoiceDetail"  style="display:none;" >
+            <p>发票内容：购买商品明细</p>
+            <p>
+                发票抬头：请确认单位名称正确,以免因名称错误耽搁您的报销。注：合约机话费仅能开个人发票
+            </p>
+            <ul class="type clearfix J_invoiceType">
+                <li class="hide">
+                    <input type="radio" value="0" name="Checkout[invoice_type]" id="noNeedInvoice" > 
+                </li>
+                <li class="">
+                    <input  class="invoiceType" type="radio" id="commonPersonal" name="Checkout[invoice_type]" value="1" >
+                    个人
+                </li>
+                <li class="">
+                     <input  class="invoiceType" type="radio" name="Checkout[invoice_type]" value="2" >
+                     单位
+                </li>
+            </ul>
+            <div  id='CheckoutInvoiceTitle' class=" hide  invoice-title">
+                <label for="Checkout[invoice_title]">单位名称：</label>
+                <input name="Checkout[invoice_title]" type="text" maxlength="49" value="" class="input"> <span class="tip-msg J_tipMsg"></span>
+            </div>
+
+        </div>
+
+    </div>
+</div>                </div>
+                <!-- 发票信息 END-->
+            </div>
+            <div class="checkout-box-ft">
+                 <!-- 商品清单 -->
+                <div id="checkoutGoodsList" class="checkout-goods-box">
+                                    <div class="xm-box">
+                    <div class="box-hd">
+                        <h2 class="title">确认订单信息</h2>
+                    </div>
+                    <div class="box-bd">
+                        <dl class="checkout-goods-list">
+                            <dt class="clearfix">
+                                <span class="col col-1">课程名称</span>
+                                <span class="col col-2">购买价格</span>
+                                <span class="col col-3">购买数量</span>
+                                <span class="col col-4">小计（元）</span>
+                            </dt>
+                                                        <dd class="item clearfix">
+                                <div class="item-row">
+                                    <div class="col col-1">
+                                        <div class="g-pic">
+                                            <img src="images/course/cu-1.jpg"  2x" width="40" height="40" />
+                                        </div>
+                                        <div class="g-info">
+                                                                                          <a href="#">
+                                              十四五规划干部培训专题  马德平教授                                             </a>
+                                                                                                                                </div>
+                                    </div>
+                
+                                    <div class="col col-2">39元</div>
+                                    <div class="col col-3">1</div>
+                                    <div class="col col-4">39元</div>
+                                </div>
+                            </dd>
+                                                        <dd class="item clearfix">
+                                <div class="item-row">
+                                    <div class="col col-1">
+                                        <div class="g-pic">
+                                            <img src="images/course/cu-2.jpg"  2x" width="40" height="40" />
+                                        </div>
+                                        <div class="g-info">
+                                                                                         <a href="#">
+                                                 高质量发展干部培训专题   温强博士                                            </a>
+                                                                                                                                </div>
+                                    </div>
+                
+                                    <div class="col col-2">49元</div>
+                                    <div class="col col-3">1</div>
+                                    <div class="col col-4">49元</div>
+                                </div>
+                            </dd>
+                                                        <dd class="item clearfix">
+                                <div class="item-row">
+                                    <div class="col col-1">
+                                        <div class="g-pic">
+                                            <img src="images/course/cu-3.jpg"  2x" width="40" height="40" />
+                                        </div>
+                                        <div class="g-info">
+                                                                                         <a href="#">
+                                             产业转型升级培训专题   黄胜国教授                                            </a>
+                                                                                                                                </div>
+                                    </div>
+                
+                                    <div class="col col-2">39元</div>
+                                    <div class="col col-3">4</div>
+                                    <div class="col col-4">156元</div>
+                                </div>
+                            </dd>
+                                                    </dl>
+                        <div class="checkout-count clearfix">
+                            <div class="checkout-count-extend xm-add-buy">
+                                <h3 class="title">会员留言</h2></br>
+                                <input type="text" />
+
+                            </div>
+                            <!-- checkout-count-extend -->
+                            <div class="checkout-price">
+                                <ul>
+
+                                    <li>
+                                       订单总额：<span>244元</span>
+                                    </li>
+                                    <li>
+                                        活动优惠：<span>-0元</span>
+                                        <script type="text/javascript">
+                                            checkoutConfig.activityDiscountMoney=0;
+                                            checkoutConfig.totalPrice=244.00;
+                                        </script>
+                                    </li>
+                                    <li>
+                                        优惠券抵扣：<span id="couponDesc">-0元</span>
+                                    </li>
+                                    <li>
+                                        运费：<span id="postageDesc">0元</span>
+                                    </li>
+                                </ul>
+                                <p class="checkout-total">应付总额：<span><strong id="totalPrice">244</strong>元</span></p>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+
+
+    
+    <!--S 保障计划 产品选择弹框 -->
+
+
+                </div>
+                <!-- 商品清单 END -->
+                <input type="hidden"  id="couponType" name="Checkout[couponsType]">
+                <input type="hidden" id="couponValue" name="Checkout[couponsValue]">
+                <div class="checkout-confirm">
+
+                     <a href="#" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
+                    <a href="pay.html"><input class="btn btn-primary" value="立即下单" /></a>
+                                     </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+
+    <script src="js/base.min.js"></script>
+
+        <script type="text/javascript" src="js/address_all.js"></script>
+<script type="text/javascript" src="js/checkout.min.js"></script>
+</div>
+
+ <!--收货地址body部分结束-->
+
+    
+    
+    <!-- 底部 -->
+   <footer id="footer-part">
+       <div class="footer-top pt-40 pb-70">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-4 col-md-6">
+                       <div class="footer-about mt-40">
+                           <div class="logo">
+                               <a href="#"><img src="images/logo-2.png" alt="Logo"></a>
+                           </div>
+                           <p>党员干部培训系统是让党员自我提升的系统：旨在提高干部队伍素质，适应新形势、新时代、新岗位的现实需要。我们必须要不断学习、不断参加培训，努力提高自己的工作能力和知识水平 。</p>
+                           <ul class="mt-20">
+                               <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                           </ul>
+                       </div> <!-- footer about -->
+                   </div>
+                   <div class="col-lg-3 col-md-6 col-sm-6">
+                       <div class="footer-link mt-40">
+                           <div class="footer-title pb-25">
+                               <h6>网站地图</h6>
+                           </div>
+                           <ul>
+                               <li><a href="index.html"><i class="fa fa-angle-right"></i>首页</a></li>
+                               <li><a href="about.html"><i class="fa fa-angle-right"></i>关于我们</a></li>
+                               <li><a href="courses.html"><i class="fa fa-angle-right"></i>课程</a></li>
+                               <li><a href="blog.html"><i class="fa fa-angle-right"></i>新闻</a></li>
+                               <li><a href="events.html"><i class="fa fa-angle-right"></i>事件</a></li>
+                           </ul>
+                           <ul>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>党章</a></li>
+                               <li><a href="shop.html"><i class="fa fa-angle-right"></i>党规</a></li>
+                               <li><a href="teachers.html"><i class="fa fa-angle-right"></i>名师</a></li>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>支持</a></li>
+                               <li><a href="contact.html"><i class="fa fa-angle-right"></i>交流</a></li>
+                           </ul>
+                       </div> <!-- footer link -->
+                   </div>
+                   <div class="col-lg-2 col-md-6 col-sm-6">
+                       <div class="footer-link support mt-40">
+                           <div class="footer-title pb-25">
+                               <h6>支持</h6>
+                           </div>
+                           <ul>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>常见问题</a></li>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>隐私</a></li>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>政策</a></li>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>支持</a></li>
+                               <li><a href="#"><i class="fa fa-angle-right"></i>文献</a></li>
+                           </ul>
+                       </div> <!-- support -->
+                   </div>
+                   <div class="col-lg-3 col-md-6">
+                       <div class="footer-address mt-40">
+                           <div class="footer-title pb-25">
+                               <h6>联系我们</h6>
+                           </div>
+                           <ul>
+                               <li>
+                                   <div class="icon">
+                                       <i class="fa fa-home"></i>
+                                   </div>
+                                   <div class="cont">
+                                       <p>广东省广州市太平镇广从南路457号广州软件学院</p>
+                                   </div>
+                               </li>
+                               <li>
+                                   <div class="icon">
+                                       <i class="fa fa-phone"></i>
+                                   </div>
+                                   <div class="cont">
+                                       <p>+15811716741</p>
+                                   </div>
+                               </li>
+                               <li>
+                                   <div class="icon">
+                                       <i class="fa fa-envelope-o"></i>
+                                   </div>
+                                   <div class="cont">
+                                       <p>1073276620@qq.com</p>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div> <!-- footer address -->
+                   </div>
+               </div> <!-- row -->
+           </div> <!-- container -->
+       </div> <!-- footer top -->
+
+       <div class="footer-copyright pt-10 pb-25">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-8">
+                       <div class="copyright text-md-left text-center pt-15">
+                           <p>&copy; Copyrights 2021 Edubin All rights reserved. </p>
+                       </div>
+                   </div>
+
+               </div> <!-- row -->
+           </div> <!-- container -->
+       </div> <!-- footer copyright -->
+   </footer>
+    <!-- 底部 -->
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/unslider.min.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+
+</body>
+</html>
